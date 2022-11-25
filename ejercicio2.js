@@ -1,3 +1,1 @@
-const maxValueOfNumbersArray = (numbers) => {
-    return Math.max(...numbers);
-}
+const maxValueOfNumbersArray = (numbers) => Math.max(...numbers);
