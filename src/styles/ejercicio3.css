@@ -4,7 +4,7 @@
     margin: auto;
     border-width: 3px;
     border-style: solid;
-    border-color: black;
+    border-color: #000;
     justify-content: space-between;
 }
 
@@ -14,17 +14,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #FFFFFF;
 }
 
 .flex-child:first-child {
-    background-color: red;
+    background-color: #FF0000;
 }
 
 .flex-child:nth-child(2) {
-    background-color: blue;
+    background-color: #00F;
 }
 
 .flex-child:last-child {
-    background-color: green;
+    background-color: #008000;
 }
