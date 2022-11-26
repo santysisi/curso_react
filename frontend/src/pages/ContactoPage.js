@@ -1,8 +1,10 @@
 import React from "react";
 
+import "../styles/components/pages/ContactoPage.css"
+
 export default function ContactoPage() {
     return (
-        <main className="holder contacto">
+        <main className="holder contacto formulariopiola">
             <div>
                 <h2>Contacto Rápido</h2>
                 <form action="" method="" className="formulario">

@@ -1,17 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import "../../styles/components/layout/Nav.css"
 
 export default function Nav() {
     return(
         <div>
-            <div>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/servicios">Servicios</Link></li>
-                    <li><Link to="/novedades">Novedades</Link></li>
-                    <li><Link to="/contacto">Contacto</Link></li>
+            <nav>
+                <ul className="navPiola">
+                    <li><NavLink activeClassName="activo" to="/">Home</NavLink></li>
+                    <li><NavLink activeClassName="activo" to="/servicios">Servicios</NavLink></li>
+                    <li><NavLink activeClassName="activo" to="/novedades">Novedades</NavLink></li>
+                    <li><NavLink activeClassName="activo" to="/contacto">Contacto</NavLink></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     );
 }

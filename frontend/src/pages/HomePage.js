@@ -1,10 +1,12 @@
 import React from "react";
 
+import "../styles/components/pages/HomePage.css"
+
 export default function HomePage() {
     return (
         <main className="holder"> 
             <div className="homeimg">
-                <img src="img/home/img01.jpg" alt="Avion" />
+                <img src="images/descarga.jpg" alt="Avion" />
             </div>
             <div className="columnas">
                 <section class="bienvenidos">
