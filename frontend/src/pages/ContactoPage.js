@@ -30,12 +30,11 @@ export default function ContactoPage() {
                 <p>También puede contactarse con nosotros usando
                 los siguintes medios</p>
                 <ul>
-                    <li>Teléfono: 43242388</li>
-                    <li>Email: contacto@transportesx.com.ar</li>
-                    <li>Facebook:</li>
-                    <li>Twitter:</li>
+                    <li>Teléfono: 123123123123</li>
+                    <li>Email: contacto@blog.com.ar</li>
+                    <li>Facebook: blogsantysisi</li>
+                    <li>Twitter: blogsantysisi</li>
                 </ul>
-                <li>Skype:</li>
             </div>
         </main>
     );
