@@ -1,0 +1,26 @@
+version: '3'
+
+services:      
+  cerveceria-db:
+    container_name: 'cerveceria-db'
+    image: mysql:5.6
+    ports: ["9906:3306"]
+    expose: [ "3306" ]
+    environment:
+      MYSQL_DATABASE: "cerveceria"
+      MYSQL_USER: "fafa"
+      MYSQL_PASSWORD: "asd123"
+      MYSQL_ROOT_PASSWORD: "asd123"
+    restart: unless-stopped
+    volumes:
+      - ./cerveceria.sql:/docker-entrypoint-initdb.d/cerveceria.sql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - '8080:80'
+    restart: always
+    environment:
+        PMA_HOST: cerveceria-db
+    depends_on:
+        - cerveceria-db

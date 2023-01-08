@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 
-var indexRouter = require('./src/routes/index');
-const { controlarSession } = require('./src/middlewares');
+var loginRouter = require('./src/routes/admin/login');
+const novedadesRouter = require('./src/routes/admin/novedades');
 
 var app = express();
 
@@ -23,14 +23,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 's@6qv$E72s@7',
   resave: false,
-  // saveUninitialized: true,
+  saveUninitialized: true,
   // cookie: { secure: true }
 }));
 
-// Personal middlewares
-app.use(controlarSession);
+const secured =  async(req, res, next) => { 
+  try{
+    if(!req.session.id_usuario) {
+      if(req.url != "/admin/login") 
+        res.redirect('/admin/login');
+      else next();
+    }
+    else next();
+  }catch(error){ 
+    console.log(error);
+  }
+}
 
-app.use('/', indexRouter);
+app.use(secured);
+app.use('/admin/login', loginRouter);
+app.use('/admin/novedades', novedadesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
